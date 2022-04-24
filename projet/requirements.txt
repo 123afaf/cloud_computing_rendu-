@@ -1,0 +1,6 @@
+python=3.7
+tensorflow==1.2.0 
+opencv-python
+numpy
+matplotlib
+pandas
