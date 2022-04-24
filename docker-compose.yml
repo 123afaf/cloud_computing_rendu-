@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+
+  datascience-notebook:
+    
+    image : jupyter/datascience-notebook
+
+    volumes :
+      - ./projet:/home/jovyan/work
+      - ./projet/data:/home/jovyan/work/data
+      - ./projet/notebook:/home/jovyan/work/notebook
+
+    ports:
+      - 8080:8888
+
+    command: >
+     bash -c "start-notebook.sh --NotebookApp.password='' --NotebookApp.token='' 
+        | pip install -r /home/jovyan/work/requirements.txt"
+
+
+    container_name: convNeuralNetwork
+
+  
